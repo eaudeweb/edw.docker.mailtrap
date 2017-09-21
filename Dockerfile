@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 LABEL maintainer.original="""David Bătrânu"" <david.batranu@eaudeweb.ro>"
-LABEL maintainer.current="ipunkt Business Solutions"
+LABEL maintainer.current="""ipunkt Business Solutions"" <info@ipunkt.biz>"
 
 ENV ROUNDCUBE_VERSION="1.3.1"
 ENV DEBIAN_FRONTEND noninteractive
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -q -y \
     dovecot-imapd \
     sqlite \
     php \
-    php7.0-mbstring \
+    php-mbstring \
     php-sqlite3 \
     php-pear \
     rsyslog \
@@ -51,4 +51,4 @@ RUN chmod 777 /var/local/docker-entrypoint.sh
 
 EXPOSE 25 80
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
+ENTRYPOINT ["/var/local/docker-entrypoint.sh"]

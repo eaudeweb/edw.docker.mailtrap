@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-apt-get install -y php-mbstring
-
 service rsyslog start
 service postfix start
 service dovecot start
