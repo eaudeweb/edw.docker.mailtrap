@@ -6,7 +6,7 @@ Catch all mail and display it in roundcube interface.
 
 ## Start Mailtrap
 
-    $ docker run -d --name=mailtrap -p 80:80 eaudeweb/mailtrap
+    $ docker run -d --name=mailtrap -p 80:80 ipunktbs/docker-mailtrap
 
 ## Send email
 
