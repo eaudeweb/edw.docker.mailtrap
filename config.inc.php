@@ -14,7 +14,7 @@ $config['plugins'] = array(
     'zipdownload',
 );
 $config['skin'] = 'larry';
-$config['disabled_actions'] = array('addressbook','compose','reply','reply-all','forward');
+$config['disabled_actions'] = array('addressbook.index','mail.compose','mail.reply','mail.reply-all','mail.forward');
 
 // store draft message is this mailbox
 // leave blank if draft messages should not be stored
@@ -22,7 +22,7 @@ $config['disabled_actions'] = array('addressbook','compose','reply','reply-all',
 $config['drafts_mbox'] = '';
 // store spam messages in this mailbox
 // NOTE: Use folder names with namespace prefix (INBOX. on Courier-IMAP)
-$config['junk_mbox'] = 'INBOX';
+$config['junk_mbox'] = '';
 // store sent message is this mailbox
 // leave blank if sent messages should not be stored
 // NOTE: Use folder names with namespace prefix (INBOX. on Courier-IMAP)
