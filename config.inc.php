@@ -8,7 +8,7 @@ $config['smtp_user'] = '';
 $config['smtp_pass'] = '';
 $config['support_url'] = '';
 $config['product_name'] = 'Roundcube MailTrap';
-$config['des_key'] = '0*8WtNP~(3Y?/FBx9.q`PSH<';
+$config['des_key'] = '###DES_KEY###';
 $config['plugins'] = array(
     'archive',
     'zipdownload',

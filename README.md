@@ -35,3 +35,12 @@ Catch all mail and display it in roundcube interface.
 
 * **Username:** `mailtrap`
 * **Password:** `mailtrap`
+
+## Custom user and password:
+
+Set environment variables
+
+* `MT_USER`
+* `MT_PASSWD`
+
+and recreate the container.

@@ -1,6 +1,6 @@
 # mailtrap
 transport_maps = hash:/etc/postfix/transport
-luser_relay = mailtrap
+luser_relay = ###MT_USER###
 local_recipient_maps =
 # /mailtrap
 

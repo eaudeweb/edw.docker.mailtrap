@@ -6,6 +6,9 @@ LABEL maintainer.current="""ipunkt Business Solutions"" <info@ipunkt.biz>"
 ENV ROUNDCUBE_VERSION="1.3.1"
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV MT_USER mailtrap
+ENV MT_PASSWD mailtrap
+
 RUN apt-get update && apt-get install -q -y \
     postfix \
     dovecot-imapd \
@@ -30,8 +33,6 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY postfix/* /etc/postfix/
 COPY dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
 
-RUN postmap /etc/postfix/transport
-
 RUN wget https://github.com/roundcube/roundcubemail/releases/download/$ROUNDCUBE_VERSION/roundcubemail-$ROUNDCUBE_VERSION-complete.tar.gz -O roundcube.tar.gz && \
     rm -rf www && \
     tar -zxf roundcube.tar.gz && \
@@ -39,11 +40,9 @@ RUN wget https://github.com/roundcube/roundcubemail/releases/download/$ROUNDCUBE
     rm -rf /var/www/installer && \
     mkdir /var/www/db && \
     . /etc/apache2/envvars && \
-    chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /var/www/temp /var/www/logs /var/www/db
-
-RUN useradd -u 1000 -m -s /bin/bash mailtrap && \
-    echo "mailtrap:mailtrap" | chpasswd && \
+    chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /var/www/temp /var/www/logs /var/www/db && \
     chmod 777 -R /var/mail
+
 
 COPY config.inc.php /var/www/config/
 COPY docker-entrypoint.sh /var/local/
