@@ -1,0 +1,15 @@
+version: "2.0"
+
+services:
+  mail:
+    container_name: sys_mail
+    restart: unless-stopped
+    image: eaudeweb/mailtrap:test
+    ports:
+      - "127.0.0.1:8125:80"
+      - "127.0.0.1:2525:25"
+    environment:
+      - MT_USER=mailtrap
+      - MT_PASSWD=mailtrap
+      - MT_MAILBOX_LIMIT=512000001
+      - MT_MESSAGE_LIMIT=102400001

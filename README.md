@@ -42,5 +42,14 @@ Set environment variables
 
 * `MT_USER`
 * `MT_PASSWD`
+* `MT_MAILBOX_LIMIT` - mailbox limit in bytes, default 51200000
+* `MT_MESSAGE_LIMIT` - message limit in bytes, default 10240000
 
 and recreate the container.
+
+## Testing the image locally
+
+```
+sudo docker build -t eaudeweb/mailtrap:test .
+sudo docker-compose up
+```
