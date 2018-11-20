@@ -2,6 +2,7 @@
 transport_maps = hash:/etc/postfix/transport
 luser_relay = ###MT_USER###
 local_recipient_maps =
+mailbox_size_limit = 0
 # /mailtrap
 
 readme_directory = no
