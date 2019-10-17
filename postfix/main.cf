@@ -6,7 +6,7 @@ mailbox_size_limit = ###MT_MAILBOX_LIMIT###
 virtual_mailbox_limit = ###MT_MAILBOX_LIMIT###
 message_size_limit = ###MT_MESSAGE_LIMIT###
 # /mailtrap
-
+mynetworks_style = class
 readme_directory = no
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
 alias_maps = hash:/etc/aliases
