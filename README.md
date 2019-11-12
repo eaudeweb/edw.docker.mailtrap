@@ -10,7 +10,7 @@ Catch all mail and display it in roundcube interface.
 
 ## Send email
 
-    $ docker run -it --link mailtrap alpine sh
+    $ docker run -it --link mailtrap alpine:3.6 sh
 
       $ telnet mailtrap 25
       ehlo example.com
