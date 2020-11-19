@@ -44,6 +44,7 @@ Set environment variables
 * `MT_PASSWD` - mailbox user password, default mailtrap
 * `MT_MAILBOX_LIMIT` - mailbox limit in bytes, default 51200000
 * `MT_MESSAGE_LIMIT` - message limit in bytes, default 10240000
+* `MT_NETWORK_STYLE` - [host, subnet, or class](http://www.postfix.org/postconf.5.html#mynetworks_style), default subnet
 
 and recreate the container.
 

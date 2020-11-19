@@ -10,6 +10,7 @@ ENV MT_USER mailtrap
 ENV MT_PASSWD mailtrap
 ENV MT_MAILBOX_LIMIT 51200000
 ENV MT_MESSAGE_LIMIT 10240000
+ENV MT_NETWORK_STYLE subnet
 
 RUN apt-get update && apt-get install -q -y \
     postfix \
