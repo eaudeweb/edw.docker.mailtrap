@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -q -y \
     php-pear \
     rsyslog \
     wget \
+    gettext-base \
     && \
     a2ensite 000-default && \
     a2enmod expires && \
@@ -32,7 +33,7 @@ RUN pear channel-update pear.php.net && \
 WORKDIR /var/
 
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
-COPY postfix/* /etc/postfix/
+COPY postfix/* /var/
 COPY dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
 
 RUN wget https://github.com/roundcube/roundcubemail/releases/download/$ROUNDCUBE_VERSION/roundcubemail-$ROUNDCUBE_VERSION-complete.tar.gz -O roundcube.tar.gz && \

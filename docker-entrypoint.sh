@@ -11,10 +11,8 @@ if $(id 1000 > /dev/null 2>&1);
   else
     echo "Creating user 1000: $MT_USER!"
     useradd -u 1000 -m -s /bin/bash $MT_USER && echo "$MT_USER:$MT_PASSWD" | chpasswd
-    sed -i "s/###MT_USER###/$MT_USER/" /etc/postfix/transport
-    sed -i "s/###MT_USER###/$MT_USER/" /etc/postfix/main.cf
-    sed -i "s/###MT_MAILBOX_LIMIT###/$MT_MAILBOX_LIMIT/" /etc/postfix/main.cf
-    sed -i "s/###MT_MESSAGE_LIMIT###/$MT_MESSAGE_LIMIT/" /etc/postfix/main.cf
+    envsubst < /var/transport.tmpl > /etc/postfix/transport
+    envsubst < /var/main.cf.tmpl > /etc/postfix/main.cf
     postmap /etc/postfix/transport
 fi
 
