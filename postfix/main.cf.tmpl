@@ -1,10 +1,12 @@
 # mailtrap
 transport_maps = hash:/etc/postfix/transport
-luser_relay = ###MT_USER###
+luser_relay = ${MT_USER}
 local_recipient_maps =
-mailbox_size_limit = ###MT_MAILBOX_LIMIT###
-virtual_mailbox_limit = ###MT_MAILBOX_LIMIT###
-message_size_limit = ###MT_MESSAGE_LIMIT###
+mailbox_size_limit = ${MT_MAILBOX_LIMIT}
+virtual_mailbox_limit = ${MT_MAILBOX_LIMIT}
+message_size_limit = ${MT_MAILBOX_LIMIT}
+mynetworks_style = ${MT_NETWORK_STYLE}
+${MT_POSTFIX_OPTIONS}
 # /mailtrap
 
 readme_directory = no
