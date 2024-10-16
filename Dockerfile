@@ -1,20 +1,20 @@
-FROM debian:stable-slim
+FROM debian:11-slim
 
 LABEL maintainer.original="David Batranu <david.batranu@eaudeweb.ro>"
 LABEL maintainer.current="ipunkt Business Solutions <info@ipunkt.biz>"
 
 ENV ROUNDCUBE_VERSION="1.3.1"
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
-ENV MT_USER mailtrap
-ENV MT_PASSWD mailtrap
-ENV MT_MAILBOX_LIMIT 51200000
-ENV MT_MESSAGE_LIMIT 10240000
+ENV MT_USER=mailtrap
+ENV MT_PASSWD=mailtrap
+ENV MT_MAILBOX_LIMIT=51200000
+ENV MT_MESSAGE_LIMIT=10240000
 
 RUN apt-get update && apt-get install -q -y \
     postfix \
     dovecot-imapd \
-    sqlite \
+    sqlite3 \
     php \
     php-mbstring \
     php-sqlite3 \
