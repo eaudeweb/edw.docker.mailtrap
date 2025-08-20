@@ -15,6 +15,7 @@ if $(id 1000 > /dev/null 2>&1);
     sed -i "s/###MT_USER###/$MT_USER/" /etc/postfix/main.cf
     sed -i "s/###MT_MAILBOX_LIMIT###/$MT_MAILBOX_LIMIT/" /etc/postfix/main.cf
     sed -i "s/###MT_MESSAGE_LIMIT###/$MT_MESSAGE_LIMIT/" /etc/postfix/main.cf
+    echo "mynetworks = 0.0.0.0/0" >> /etc/postfix/main.cf
     postmap /etc/postfix/transport
 fi
 
