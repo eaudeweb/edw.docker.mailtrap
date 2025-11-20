@@ -40,9 +40,9 @@ RUN wget https://github.com/roundcube/roundcubemail/releases/download/$ROUNDCUBE
     tar -zxf roundcube.tar.gz && \
     mv roundcubemail-$ROUNDCUBE_VERSION www && \
     rm -rf /var/www/installer && \
-    mkdir /var/www/db && \
+    mkdir /var/db && \
     . /etc/apache2/envvars && \
-    chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /var/www/temp /var/www/logs /var/www/db && \
+    chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /var/www/temp /var/www/logs /var/db && \
     chmod 777 -R /var/mail
 
 

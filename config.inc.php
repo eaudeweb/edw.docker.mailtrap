@@ -1,6 +1,6 @@
 <?php
 $config = array();
-$config['db_dsnw'] = 'sqlite:////var/www/db/sqlite.db';
+$config['db_dsnw'] = 'sqlite:////var/db/sqlite.db';
 $config['default_host'] = 'localhost';
 $config['smtp_server'] = 'localhost';
 $config['smtp_port'] = 25;
